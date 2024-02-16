@@ -59,5 +59,15 @@ const chartData = {
   
   populateUl();
 
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    var userLanguage = navigator.language || navigator.userLanguage;
+
+    
+    var isRTL = /ar|he|fa/.test(userLanguage.toLowerCase());
+
+    
+    document.body.dir = isRTL ? 'rtl' : 'ltr';
+});
 
 
