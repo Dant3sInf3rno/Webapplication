@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CO² - Footprinting - Statistik</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EcoHarmony</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <img src="Logo.png" alt="CO2">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1>EcoHarmony</h1>
 
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link active" href="index.html">Länder</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="Unternehmen.html">Unternehmen</a>
-        </li>	
-	    <li class="nav-item">
-            <a class="nav-link active" href="Statistik.html">Statistik</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="Überuns.html">Über Uns</a>
-        </li>
-    </ul>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Logo.png" alt="EcoHarmony Logo" width="75" height="50" class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Länder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Unternehmen.html">Unternehmen</a>
+                    </li>	
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Statistik.html">Statistik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="EcoHarmony.html">EcoHarmony</a>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <h2>Weltweiter Vergleich</h2>
+    <div class="container mt-5">
+        <h1>Weltweite Statistiken im Überblick</h1>
+    </div>
 
-    <h3 class="chart-heading">Prozentualer CO²-Emissionsanteil nach Länder</h3>
+
+
+    <h3 class="chart-heading">Prozentualer CO²-Emissionsanteil nach Länder</h2>
     <div class="programming-stats">
         <div class="chart-container">
             <canvas class="my-chart"></canvas>
@@ -54,8 +63,52 @@
             <ul class="company-details-list"></ul>
         </div>
     </div>
-    
 
+    <div class="container mt-5">
+        <h1>Tabelle</h1>
+
+    <div class="Tabelle">
+        <table>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+            </tr>
+          </table>
+    </div>
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="main.js"></script>
 
