@@ -40,6 +40,35 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+//Tabelle 
+document.addEventListener('DOMContentLoaded', function () {
+  var searchInput = document.getElementById('searchInput');
+  var table = document.querySelector('.Tabelle table');
+  var rows = table.getElementsByTagName('tr');
+
+  searchInput.addEventListener('input', function () {
+      var searchValue = this.value.toLowerCase();
+
+      for (var i = 1; i < rows.length; i++) { // Start bei 1 überspringt die Überschriftenzeile
+          var rowData = rows[i].getElementsByTagName('td');
+          var found = false;
+
+          for (var j = 0; j < rowData.length; j++) {
+              if (rowData[j].innerText.toLowerCase().includes(searchValue)) {
+                  found = true;
+                  break;
+              }
+          }
+
+          if (found) {
+              rows[i].style.display = '';
+          } else {
+              rows[i].style.display = 'none';
+          }
+      }
+  });
+});
+
 //Doughnut-Diagramm Statistik.html
 const chartData = {
   labels: ["China", "USA", "Indien", "Russland", "Japan", "Iran", "Deutschland", "Saudi-Arabien", "Indonesien", "Südkorea", "Rest"],
@@ -132,6 +161,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.body.dir = isRTL ? 'rtl' : 'ltr';
 });
+
+//Sicherheit mit einer Blacklist 
+document.addEventListener('DOMContentLoaded', function () {
+  var searchInput = document.getElementById('searchInput');
+  var companyList = document.getElementById('companyList');
+  var companies = companyList.getElementsByTagName('li');
+
+  searchInput.addEventListener('input', function () {
+      var searchValue = this.value;
+
+      // Überprüfe, ob die Eingabe den Kriterien entspricht
+      if (isValidInput(searchValue)) {
+          searchValue = searchValue.toLowerCase();
+
+          for (var i = 0; i < companies.length; i++) {
+              var companyName = companies[i].innerText.toLowerCase();
+
+              if (companyName.includes(searchValue)) {
+                  companies[i].style.display = 'block';
+              } else {
+                  companies[i].style.display = 'none';
+              }
+          }
+      } else {
+          // Ungültige Eingabe, setze Feld zurück und zeige Fehlermeldung
+          this.value = ''; // Setze das Feld zurück
+          alert('Nur Buchstaben (groß und klein) und Zahlen sind erlaubt.');
+      }
+  });
+
+  function isValidInput(input) {
+      // Definiere eine Whitelist von erlaubten Zeichen oder Mustern
+      var allowedPattern = /^[a-zA-Z0-9]+$/; // Erlaube Buchstaben (groß und klein) und Zahlen
+
+      // Überprüfe, ob die Eingabe der Whitelist entspricht
+      return allowedPattern.test(input);
+  }
+});
+
+
 
 
 
