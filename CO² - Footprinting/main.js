@@ -153,52 +153,48 @@ populateCompanyUl();
 
 
 //Schriftkultur
-document.addEventListener('DOMContentLoaded', function () {
+  // Hier kannst du die Landesinformationen abrufen oder verwenden, um die Schriftkultur festzulegen
+  var land = "de"; // Hier als Beispiel: Deutschland
 
-  var userLanguage = navigator.language || navigator.userLanguage;
-
-  var isRTL = /ar|he|fa/.test(userLanguage.toLowerCase());
-
-  document.body.dir = isRTL ? 'rtl' : 'ltr';
-});
+  // Prüfen, ob die Schriftkultur "rtl" (right-to-left) sein sollte
+  if (land === "ar" || land === "he" || land === "fa") {
+    document.getElementById("myHtmlTag").setAttribute("dir", "rtl");
+  } else {
+    // Standardmäßig "ltr" (left-to-right)
+    document.getElementById("myHtmlTag").setAttribute("dir", "ltr");
+  }
 
 //Sicherheit mit einer Blacklist 
-document.addEventListener('DOMContentLoaded', function () {
-  var searchInput = document.getElementById('searchInput');
-  var companyList = document.getElementById('companyList');
-  var companies = companyList.getElementsByTagName('li');
+const searchInput = document.getElementById('searchInput');
 
-  searchInput.addEventListener('input', function () {
-      var searchValue = this.value;
+searchInput.addEventListener('input', function () {
+  const inputValue = this.value;
 
-      // Überprüfe, ob die Eingabe den Kriterien entspricht
-      if (isValidInput(searchValue)) {
-          searchValue = searchValue.toLowerCase();
-
-          for (var i = 0; i < companies.length; i++) {
-              var companyName = companies[i].innerText.toLowerCase();
-
-              if (companyName.includes(searchValue)) {
-                  companies[i].style.display = 'block';
-              } else {
-                  companies[i].style.display = 'none';
-              }
-          }
-      } else {
-          // Ungültige Eingabe, setze Feld zurück und zeige Fehlermeldung
-          this.value = ''; // Setze das Feld zurück
-          alert('Nur Buchstaben (groß und klein) und Zahlen sind erlaubt.');
-      }
-  });
-
-  function isValidInput(input) {
-      // Definiere eine Whitelist von erlaubten Zeichen oder Mustern
-      var allowedPattern = /^[a-zA-Z0-9]+$/; // Erlaube Buchstaben (groß und klein) und Zahlen
-
-      // Überprüfe, ob die Eingabe der Whitelist entspricht
-      return allowedPattern.test(input);
+  // Überprüfe, ob das Eingabefeld Zeichen aus der Blacklist enthält
+  if (containsUnwantedChars(inputValue)) {
+    alert('Ungültige Eingabe: Unerwünschte Zeichen enthalten.');
+    // Hier könntest du die Eingabe löschen oder anderweitig darauf reagieren
+  } else {
+    // Eingabe ist sicher, hier kannst du deine bestehende Logik fortsetzen
+    console.log('Sichere Eingabe:', inputValue);
   }
 });
+
+function containsUnwantedChars(input) {
+  // Beispiel-Blacklist für unerwünschte Zeichen
+  const blacklist = ['<', '>', '&', ';', '"', "'", '/', '\\'];
+
+  // Überprüfe, ob das Eingabefeld Zeichen aus der Blacklist enthält
+  for (let i = 0; i < blacklist.length; i++) {
+    if (input.includes(blacklist[i])) {
+      return true;
+    }
+  }
+
+  // Keine unerwünschten Zeichen gefunden
+  return false;
+}
+
 
 
 
