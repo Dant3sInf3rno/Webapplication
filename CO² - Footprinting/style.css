@@ -32,34 +32,34 @@ p {
 nav{
   font-family: "Rubik", sans-serif;
   display: flex;
-  top: 0; /* Hinzufügung: Positioniere die Navbar oben */
+  top: 0; 
   left: 0;
   width: 100%;
-  height: 100px; /* Hinzufügung: Festlegen der Höhe der Navbar */
-  background-color: #333; /* Hinzufügung: Beispiel-Hintergrundfarbe */
+  height: 100px; 
+  background-color: #333; 
 }
 
 .aboutUs {
   font-family: "Rubik", sans-serif;
-  text-align: justify; /* Blocksatz */
-  text-align: left; /* Letzte Zeile zentrieren (falls unterstützt) */
+  text-align: justify; 
+  text-align: left; 
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  height: 50vh; /* 100% der Bildschirmhöhe */
-  padding: 0 40px; /*Abstand links und rechts */
-  margin: 0; /* Entferne den standardmäßigen Seitenabstand des <body>-Elements */
+  height: 50vh; 
+  padding: 0 40px; 
+  margin: 0; 
 }
 
 /*Suchleiste*/
 #searchInput {
   font-family: "Rubik", sans-serif;
   text-align: center;
-  padding: 15px; /* Füge zusätzlichen Innenabstand hinzu */
-  width: 300px; /* Passe die Breite nach Bedarf an */
-  height: 40px; /* Passe die Höhe nach Bedarf an */
-  font-size: 20px; /* Passe die Schriftgröße nach Bedarf an */
+  padding: 15px; 
+  width: 300px; 
+  height: 40px; 
+  font-size: 20px; 
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;

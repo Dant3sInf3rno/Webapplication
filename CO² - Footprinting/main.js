@@ -153,14 +153,11 @@ populateCompanyUl();
 
 
 //Schriftkultur
-  // Hier kannst du die Landesinformationen abrufen oder verwenden, um die Schriftkultur festzulegen
-  var land = "de"; // Hier als Beispiel: Deutschland
+  var land = "de"; 
 
-  // Prüfen, ob die Schriftkultur "rtl" (right-to-left) sein sollte
   if (land === "ar" || land === "he" || land === "fa") {
     document.getElementById("myHtmlTag").setAttribute("dir", "rtl");
   } else {
-    // Standardmäßig "ltr" (left-to-right)
     document.getElementById("myHtmlTag").setAttribute("dir", "ltr");
   }
 
@@ -170,31 +167,25 @@ const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', function () {
   const inputValue = this.value;
 
-  // Überprüfe, ob das Eingabefeld Zeichen aus der Blacklist enthält
   if (containsUnwantedChars(inputValue)) {
     alert('Ungültige Eingabe: Unerwünschte Zeichen enthalten.');
-    // Hier könntest du die Eingabe löschen oder anderweitig darauf reagieren
   } else {
-    // Eingabe ist sicher, hier kannst du deine bestehende Logik fortsetzen
     console.log('Sichere Eingabe:', inputValue);
   }
 });
 
 function containsUnwantedChars(input) {
-  // Beispiel-Blacklist für unerwünschte Zeichen
+
   const blacklist = ['<', '>', '&', ';', '"', "'", '/', '\\'];
 
-  // Überprüfe, ob das Eingabefeld Zeichen aus der Blacklist enthält
   for (let i = 0; i < blacklist.length; i++) {
     if (input.includes(blacklist[i])) {
       return true;
     }
   }
 
-  // Keine unerwünschten Zeichen gefunden
   return false;
 }
-
 
 
 
