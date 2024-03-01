@@ -1,3 +1,15 @@
+/*Logo*/
+img {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 120px;
+  margin-top: 20px;
+  width: 25%;
+}
+
+/*1. Überschrift*/
 h1 {
   font-family: "Rubik", sans-serif;
   color: #000;
@@ -5,6 +17,7 @@ h1 {
   text-align: center;
 }
 
+/*2.Überschrift*/
 h2 {
   font-family: "Rubik", sans-serif;
   color: #000;
@@ -13,6 +26,7 @@ h2 {
   gap: 25px;
 }
 
+/*3.Überschrift*/
 h3 {
   font-family: "Rubik", sans-serif;
   color: #000;
@@ -21,6 +35,7 @@ h3 {
   gap: 15px;
 }
 
+/*Fließtext*/
 p {
   font-family: "Rubik", sans-serif;
   color: #000;
@@ -29,42 +44,25 @@ p {
   line-height: 1.5;
 }
 
-nav{
-  font-family: "Rubik", sans-serif;
-  display: flex;
-  top: 0; 
-  left: 0;
-  width: 100%;
-  height: 100px; 
-  background-color: #333; 
+/*Navbar*/
+nav {
+  font-family: "Rubik", sans-serif
 }
 
-.aboutUs {
-  font-family: "Rubik", sans-serif;
-  text-align: justify; 
-  text-align: left; 
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  height: 50vh; 
-  padding: 0 40px; 
-  margin: 0; 
-}
-
-/*Suchleiste*/
+/*Sucheingabe*/
 #searchInput {
   font-family: "Rubik", sans-serif;
   text-align: center;
-  padding: 15px; 
-  width: 300px; 
+  padding: 15px;
+  width: 30%; 
+  max-width: 300px; 
   height: 40px; 
   font-size: 20px; 
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
-  
 }
 
 /*countryList - Länder*/
@@ -91,7 +89,9 @@ nav{
 table {
   font-family: "Rubik", sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 50px;
 }
 
@@ -105,54 +105,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-/* Doughnut Diagramme*/
-.chart-heading {
-  font-family: "Rubik", sans-serif;
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 24px;
-  text-align: center;
-}
-
-.chart-container {
-  width: 200px;
-}
-
-.programming-stats {
-  font-family: "Rubik", sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: 0 auto 20px;
-  width: fit-content;
-  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  padding: 8px 32px;
-  color: #000000;
-  transition: all 400ms ease;
-}
-
-.programming-stats:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px -7px rgba(0, 0, 0, 0.3);
-}
-
-.programming-stats .details ul {
-  list-style: none;
-  padding: 0;
-}
-
-.programming-stats .details ul li {
-  font-size: 16px;
-  margin: 12px 0;
-  text-transform: uppercase;
-}
-
-.programming-stats .details .percentage {
-  font-weight: 700;
-  color: #e63946;
-}
-
+/*footer*/
 .footer {
   font-family: "Rubik", sans-serif;
   text-align: center;
@@ -165,3 +118,5 @@ tr:nth-child(even) {
   margin-top: 15%;
   background-color: #f8f9fa; 
 }
+
+

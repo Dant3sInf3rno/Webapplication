@@ -69,125 +69,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//Doughnut-Diagramm Statistik.html
-const chartData = {
-  labels: ["China", "USA", "Indien", "Russland", "Japan", "Iran", "Deutschland", "Saudi-Arabien", "Indonesien", "Südkorea", "Rest"],
-  data: [15, 12, 11, 10, 8, 7, 6, 5, 4, 3, 19],
-};
+// Beispiel-Blacklist mit verbotenen Zeichen
+const forbiddenCharacters = ["<", ">", "/", "*", "%", "(", ")", "{", "}", "["];
 
-const myChart = document.querySelector(".my-chart");
-const ul = document.querySelector(".programming-stats .details ul");
-
-new Chart(myChart, {
-  type: "doughnut",
-  data: {
-      labels: chartData.labels,
-      datasets: [
-          {
-              label: "CO2",
-              data: chartData.data,
-          },
-      ],
-  },
-  options: {
-      borderWidth: 10,
-      borderRadius: 2,
-      hoverBorderWidth: 0,
-      plugins: {
-          legend: {
-              display: false,
-          },
-      },
-  },
-});
-
-const populateUl = () => {
-  chartData.labels.forEach((l, i) => {
-      let li = document.createElement("li");
-      li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}%</span>`;
-      ul.appendChild(li);
-  });
-};
-
-populateUl();
-
-//Doughnut-Diagramm Statistik.html Unternehmen
-const companyChartData = {
-  labels: ["China (Coal)", "Saudi Arabian Oil Company (Aramco)", "Gazprom OAO", "National Iranian Oil Co", "ExxonMobil Corp", "Coal India", "Petroleos Mexicanos (Pemex)", "Russia (Coal)", "Royal Dutch Shell PLC", "China National Petroleum Corp (CNPC)", "Rest"],
-  data: [15, 12, 11, 10, 8, 7, 6, 5, 4, 3, 19],
-};
-
-const companyChart = document.querySelector(".company-chart");
-const companyUl = document.querySelector(".company-details-list");
-
-const populateCompanyUl = () => {
-  companyChartData.labels.forEach((label, index) => {
-    let li = document.createElement("li");
-    li.innerHTML = `${label}: <span class='percentage'>${companyChartData.data[index]}%</span>`;
-    companyUl.appendChild(li);
-  });
-};
-
-new Chart(companyChart, {
-  type: "doughnut",
-  data: {
-    labels: companyChartData.labels,
-    datasets: [{
-      label: "CO2",
-      data: companyChartData.data,
-    }],
-  },
-  options: {
-    borderWidth: 10,
-    borderRadius: 2,
-    hoverBorderWidth: 0,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-  },
-});
-
-populateCompanyUl();
-
-
-//Schriftkultur
-  var land = "de"; 
-
-  if (land === "ar" || land === "he" || land === "fa") {
-    document.getElementById("myHtmlTag").setAttribute("dir", "rtl");
-  } else {
-    document.getElementById("myHtmlTag").setAttribute("dir", "ltr");
-  }
-
-//Sicherheit mit einer Blacklist 
-const searchInput = document.getElementById('searchInput');
-
-searchInput.addEventListener('input', function () {
-  const inputValue = this.value;
-
-  if (containsUnwantedChars(inputValue)) {
-    alert('Ungültige Eingabe: Unerwünschte Zeichen enthalten.');
-  } else {
-    console.log('Sichere Eingabe:', inputValue);
-  }
-});
-
-function containsUnwantedChars(input) {
-
-  const blacklist = ['<', '>', '&', ';', '"', "'", '/', '\\'];
-
-  for (let i = 0; i < blacklist.length; i++) {
-    if (input.includes(blacklist[i])) {
-      return true;
+// Funktion zum Überprüfen, ob die Eingabe verbotene Zeichen enthält
+function hasForbiddenCharacters(input) {
+    for (const char of forbiddenCharacters) {
+        if (input.includes(char)) {
+            return true; // Eingabe enthält verbotenes Zeichen
+        }
     }
-  }
-
-  return false;
+    return false; // Eingabe enthält keine verbotenen Zeichen
 }
 
-
-
-
-
+// Beispiel-Nutzung der Funktion
+const userInput = "This is a <script>"; // Benutzereingabe, die überprüft wird
+if (hasForbiddenCharacters(userInput)) {
+    console.log("Die Eingabe enthält verbotene Zeichen.");
+} else {
+    console.log("Die Eingabe ist sicher.");
+}

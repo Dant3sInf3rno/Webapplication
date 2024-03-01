@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,66 +9,37 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="EcoHarmony.html">
-                <img src="Logo.png" alt="EcoHarmony Logo" width="75" height="50" class="d-inline-block align-top">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Länder</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="Unternehmen.html">Unternehmen</a>
-                    </li>	
-                    <li class="nav-item">
-                        <a class="nav-link active" href="Statistik.html">Statistik</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="EcoHarmony.html">EcoHarmony</a>
-                    </li> 
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="EcoHarmony.html">EcoHarmony</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Länder</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Unternehmen.html">Unternehmen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Statistik.html">Tabelle</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
 
-    <div class="container mt-5">
-        <h1>Weltweite Statistiken im Überblick</h1>
-    </div>
-
-
-    <div class="container-mt5">
-        <h3 class="chart-heading">Prozentualer CO²-Emissionsanteil nach Länder</h3>
-            <div class="programming-stats">
-                <div class="chart-container">
-                    <canvas class="my-chart"></canvas>
-                </div>
-            
-    
-
-    <div class="details">
-            <ul></ul>
-        </div>
-    </div>
-
-    <h3 class="chart-heading">Prozentualer CO²-Emissionsanteil nach Unternehmen</h3>
-    <div class="programming-stats">
-        <div class="chart-container">
-            <canvas class="company-chart"></canvas>
-        </div>
-    
-        <div class="details">
-            <ul class="company-details-list"></ul>
-        </div>
+      <div class="Logo">
+        <a href="EcoHarmony.html">
+        <img src="Logo.png" alt="CO2" width="30" height="60">
+        </a>
     </div>
 
     <div class="container mt-5">
         <h1>Tabelle</h1>
-    </div>
+    </div>  
 
     <div class="container mt-3">
         <input type="text" id="searchInput" placeholder="Suche">
@@ -124,7 +95,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="main.js"></script>
 
 <div class="container mt-5">
