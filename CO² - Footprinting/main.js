@@ -69,23 +69,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Beispiel-Blacklist mit verbotenen Zeichen
-const forbiddenCharacters = ["<", ">", "/", "*", "%", "(", ")", "{", "}", "["];
+// Beispiel: Blacklist-Funktion
+function sanitizeInput(userInput) {
+  const blacklist = ['<', '>', '(', ')', '{', '}', '[', ']', ';'];
 
-// Funktion zum Überprüfen, ob die Eingabe verbotene Zeichen enthält
-function hasForbiddenCharacters(input) {
-    for (const char of forbiddenCharacters) {
-        if (input.includes(char)) {
-            return true; // Eingabe enthält verbotenes Zeichen
-        }
-    }
-    return false; // Eingabe enthält keine verbotenen Zeichen
+  // Überprüfen und blockieren Sie die Zeichen in der Blacklist
+  for (const char of blacklist) {
+      userInput = userInput.split(char).join('');
+  }
+
+  return userInput;
 }
 
-// Beispiel-Nutzung der Funktion
-const userInput = "This is a <script>"; // Benutzereingabe, die überprüft wird
-if (hasForbiddenCharacters(userInput)) {
-    console.log("Die Eingabe enthält verbotene Zeichen.");
-} else {
-    console.log("Die Eingabe ist sicher.");
-}
+// Beispiel: Benutzereingabe mit zu blockierenden Zeichen
+const userInputToTest = "<script>alert('XSS attack!');</script>";
+
+// Verwenden Sie die Funktion, um die Eingabe zu bereinigen
+const cleanInput = sanitizeInput(userInputToTest);
+
+// Ausgabe der bereinigten Eingabe in der Konsole
+console.log(cleanInput);
+
+
