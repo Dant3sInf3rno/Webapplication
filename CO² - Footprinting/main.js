@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   searchInput.addEventListener('input', function () {
       var searchValue = this.value.toLowerCase();
 
-      for (var i = 1; i < rows.length; i++) { // Start bei 1 überspringt die Überschriftenzeile
+      for (var i = 1; i < rows.length; i++) {
           var rowData = rows[i].getElementsByTagName('td');
           var found = false;
 
