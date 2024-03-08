@@ -119,4 +119,7 @@ tr:nth-child(even) {
   background-color: #f8f9fa; 
 }
 
+.text-Datenschutz {
+  unicode-bidi: embed;
+}
 

@@ -89,5 +89,3 @@ const cleanInput = sanitizeInput(userInputToTest);
 
 // Ausgabe der bereinigten Eingabe in der Konsole
 console.log(cleanInput);
-
-
